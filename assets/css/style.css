@@ -10,14 +10,26 @@
 
 :root {
     /* Color Scheme */
-    --bg-color: #F2F3F4;
-    --highlight-color: #FFD301;
-    --header-color: #174687;
-    --text-color: #333333;
-    --light-text: #666666;
+    --bg-color: #f7f9fb;
+    --highlight-color: #10b981;
+    --header-color: #111827;
+    --accent-color: #f59e0b;
+    --text-color: #111827;
+    --light-text: #4b5563;
     --white: #ffffff;
-    --shadow: rgba(0, 0, 0, 0.1);
+    --shadow: rgba(0, 0, 0, 0.08);
     
+
+:root[data-theme="dark"] {
+    --bg-color: #0b1220;
+    --highlight-color: #22d3ee;
+    --header-color: #e2e8f0;
+    --accent-color: #fbbf24;
+    --text-color: #e2e8f0;
+    --light-text: #cbd5e1;
+    --white: #0f172a;
+    --shadow: rgba(0, 0, 0, 0.35);
+}
     /* Spacing */
     --section-padding: 100px 0;
     --container-padding: 0 20px;
@@ -73,6 +85,7 @@ section {
     justify-content: space-between;
     align-items: center;
     padding: 20px 0;
+    gap: 16px;
 }
 
 .logo a {
@@ -160,7 +173,10 @@ section {
     display: flex;
     align-items: center;
     padding-top: 80px;
-    background: linear-gradient(135deg, var(--bg-color) 0%, #e8eaf6 100%);
+    background: linear-gradient(135deg,
+        var(--bg-color) 0%,
+    rgba(16, 185, 129, 0.12) 35%,
+    rgba(245, 158, 11, 0.14) 100%);
 }
 
 .featured-content {
@@ -225,28 +241,36 @@ section {
     text-decoration: none;
     display: inline-block;
     transition: var(--transition);
+    color: var(--highlight-color);
+    background-color: var(--white);
+    border: 2px solid var(--highlight-color);
 }
 
 .btn-primary {
-    background-color: var(--highlight-color);
-    color: var(--header-color);
-    box-shadow: 0 4px 15px rgba(255, 211, 1, 0.3);
+    background-color: var(--white);
+    color: var(--highlight-color);
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.18);
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(255, 211, 1, 0.4);
+    background-color: var(--highlight-color);
+    color: var(--white);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.32);
 }
 
 .btn-secondary {
-    background-color: var(--header-color);
-    color: var(--white);
-    box-shadow: 0 4px 15px rgba(23, 70, 135, 0.3);
+    background-color: var(--white);
+    color: var(--highlight-color);
+    border: 2px solid var(--highlight-color);
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.18);
 }
 
 .btn-secondary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(23, 70, 135, 0.4);
+    background-color: var(--highlight-color);
+    color: var(--white);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.32);
 }
 
 /* Pulse Animation for CTA */
@@ -407,6 +431,9 @@ section {
     gap: 40px;
 }
 
+.project-cta {
+    margin-top: 15px;
+}
 .project-card {
     background-color: var(--white);
     border-radius: 15px;
@@ -451,7 +478,7 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(23, 70, 135, 0.9);
+    background-color: rgba(23, 185, 130, 0.82);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -526,6 +553,10 @@ section {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+}
+
+.project-cta {
+    margin-top: 15px;
 }
 
 .tech-tag {
@@ -784,10 +815,10 @@ section {
     right: 30px;
     width: 50px;
     height: 50px;
-    background-color: var(--highlight-color);
-    border: none;
+    background-color: var(--white);
+    border: 2px solid var(--highlight-color);
     border-radius: 50%;
-    color: var(--header-color);
+    color: var(--highlight-color);
     font-size: 20px;
     cursor: pointer;
     opacity: 0;
@@ -803,7 +834,7 @@ section {
 }
 
 .back-to-top:hover {
-    background-color: var(--header-color);
+    background-color: var(--highlight-color);
     color: var(--white);
     transform: translateY(-5px);
 }
