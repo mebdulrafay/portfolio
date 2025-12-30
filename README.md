@@ -20,15 +20,16 @@ Welcome to my **personal portfolio**! This portfolio showcases my skills, projec
 ---
 
 ## 📂 Project Structure
-HafizAbdulRafay-Portfolio/
-├── index.html                  # Main HTML file
-├── README.md                   # Project documentation
-├── assets/
-│   ├── css/
-│   │   └── style.css           # All custom CSS styles
-│   ├── js/
-│   │   └── main.js             # JavaScript for animations, typing, form handling
-│   └── img/
+HafizAbdulRafay-Portfolio
+│
+├── index.html                  # Main HTML file (Home, About, Projects, Contact)
+├── README.md                   # Project documentation & instructions
+├── assets
+│   ├── css
+│   │   └── style.css           # All styling: layout, animations, responsive design
+│   ├── js
+│   │   └── main.js             # All JavaScript: animations, typing effect, form handling
+│   └── img
 │       ├── avatar.png          # Profile image
 │       ├── p1.png              # Project 1 screenshot
 │       ├── p2.jpeg             # Project 5 screenshot
@@ -36,8 +37,46 @@ HafizAbdulRafay-Portfolio/
 │       ├── p4.jpeg             # Project 4 screenshot
 │       ├── p5.jpeg             # Project 2 screenshot
 │       └── 123.png             # Project 3 screenshot
-                   
----
+├── .gitignore                  # Optional: ignore unnecessary files
+└── LICENSE                     # Optional: project license
+
+Flow of Website:
+
+index.html
+├── Navigation Bar
+│   ├── Logo
+│   ├── Nav Links (Home, About, Projects, Contact)
+│   └── Hamburger (mobile menu)
+│
+├── Featured/Home Section
+│   ├── Intro Text
+│   ├── Typing Animation
+│   └── Profile Image (avatar.png)
+│
+├── About Section
+│   ├── About Text
+│   └── Skills Grid (HTML, CSS, JS, Python, Arduino, AI)
+│
+├── Projects Section
+│   ├── Project Card 1 → Radar System
+│   ├── Project Card 2 → Weather App
+│   ├── Project Card 3 → Personal Portfolio
+│   ├── Project Card 4 → Binary Converter
+│   ├── Project Card 5 → Arduino Buzzer
+│   └── Project Card 6 → Interactive Portfolio UI
+│
+├── Freelancing Section
+│   ├── Graphic Designing
+│   ├── AI-Assisted Developer
+│   └── Arduino Prototyping
+│
+├── Contact Section
+│   ├── Contact Form → Formspree integration
+│   └── Social Icons
+│
+└── Footer
+    ├── Dynamic Year
+    └── Copyright Text
 
 ## 💻 Technologies Used
 
