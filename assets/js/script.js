@@ -506,5 +506,33 @@ document.querySelectorAll('.social-icon, .footer-icon').forEach(icon => {
 });
 
 // ===================================
+// Show More Achievements Functionality
+// ===================================
+
+const showMoreBtn = document.getElementById('showMoreAchievements');
+if (showMoreBtn) {
+    showMoreBtn.addEventListener('click', function() {
+        const hiddenAchievements = document.querySelectorAll('.hidden-achievement');
+        const showText = this.querySelector('.show-text');
+        const hideText = this.querySelector('.hide-text');
+        const icon = this.querySelector('i');
+        
+        hiddenAchievements.forEach(achievement => {
+            achievement.classList.toggle('show');
+        });
+        
+        this.classList.toggle('active');
+        
+        if (this.classList.contains('active')) {
+            showText.style.display = 'none';
+            hideText.style.display = 'inline';
+        } else {
+            showText.style.display = 'inline';
+            hideText.style.display = 'none';
+        }
+    });
+}
+
+// ===================================
 // End of Main JavaScript
 // ===================================
