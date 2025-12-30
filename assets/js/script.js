@@ -165,32 +165,72 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // ===================================
-    // Contact Form Handling
+    // Contact Form Handling with Formspree
     // ===================================
     
     const contactForm = document.getElementById('contactForm');
     
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form values
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const subject = document.getElementById('subject').value;
-        const message = document.getElementById('message').value;
-        
-        // Basic validation
-        if (name && email && subject && message) {
-            // Here you would typically send the data to a server
-            // For demo purposes, we'll just show an alert
-            alert('Thank you for your message! I will get back to you soon.');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
             
-            // Reset form
-            contactForm.reset();
-        } else {
-            alert('Please fill in all fields.');
-        }
-    });
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            
+            // Show loading state
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Prepare form data
+            const formData = new FormData(contactForm);
+            
+            // Submit to Formspree
+            fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Success - show message
+                    submitBtn.textContent = '✓ Message Sent!';
+                    submitBtn.style.backgroundColor = '#21ba84';
+                    submitBtn.style.color = '#fff';
+                    
+                    // Reset form
+                    contactForm.reset();
+                    
+                    // Reset button after 3 seconds
+                    setTimeout(() => {
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                        submitBtn.style.backgroundColor = '';
+                        submitBtn.style.color = '';
+                    }, 3000);
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            })
+            .catch(error => {
+                // Error handling
+                submitBtn.textContent = '✗ Error - Try Again';
+                submitBtn.style.backgroundColor = '#ff6b6b';
+                submitBtn.style.color = '#fff';
+                
+                console.error('Form error:', error);
+                
+                // Reset button after 3 seconds
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                    submitBtn.style.backgroundColor = '';
+                    submitBtn.style.color = '';
+                }, 3000);
+            });
+        });
+    }
     
     // ===================================
     // Navbar Background Change on Scroll
