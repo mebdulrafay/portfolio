@@ -802,26 +802,26 @@ section {
 .form-group input,
 .form-group textarea {
     padding: 12px 15px;
-    border: 2px solid #e0e0e0;
+    border: 2px solid #d1d5db !important;
     border-radius: 8px;
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
     transition: all 0.3s ease;
     background-color: var(--white);
     color: var(--text-color);
-    accent-color: #21ba84 !important;
+    accent-color: initial;
 }
 
 .form-group input:hover,
 .form-group textarea:hover {
-    border-color: #21ba84;
+    border-color: #c7cdd6 !important;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-    outline: none;
-    border-color: #21ba84 !important;
-    box-shadow: 0 0 0 3px rgba(33, 186, 132, 0.15);
+    outline: none !important;
+    border-color: #9ca3af !important;
+    box-shadow: none !important;
     background-color: var(--white);
 }
 
