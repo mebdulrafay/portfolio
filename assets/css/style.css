@@ -9,26 +9,26 @@
 }
 
 :root {
-    /* Color Scheme */
-    --bg-color: #f7f9fb;
-    --highlight-color: #10b981;
-    --header-color: #111827;
-    --accent-color: #f59e0b;
-    --text-color: #111827;
-    --light-text: #4b5563;
+    /* Color Scheme - Light Gray, Black & Purple Theme */
+    --bg-color: #E8E8E8;
+    --highlight-color: #7B3FF2;
+    --header-color: #000000;
+    --accent-color: #7B3FF2;
+    --text-color: #000000;
+    --light-text: #4A4A4A;
     --white: #ffffff;
-    --shadow: rgba(0, 0, 0, 0.08);
+    --shadow: rgba(0, 0, 0, 0.1);
     
 
 :root[data-theme="dark"] {
-    --bg-color: #0b1220;
-    --highlight-color: #22d3ee;
-    --header-color: #e2e8f0;
-    --accent-color: #fbbf24;
-    --text-color: #e2e8f0;
-    --light-text: #cbd5e1;
-    --white: #0f172a;
-    --shadow: rgba(0, 0, 0, 0.35);
+    --bg-color: #000000;
+    --highlight-color: #7B3FF2;
+    --header-color: #E8E8E8;
+    --accent-color: #7B3FF2;
+    --text-color: #E8E8E8;
+    --light-text: #B0B0B0;
+    --white: #1A1A1A;
+    --shadow: rgba(123, 63, 242, 0.2);
 }
     /* Spacing */
     --section-padding: 100px 0;
@@ -175,8 +175,8 @@ section {
     padding-top: 80px;
     background: linear-gradient(135deg,
         var(--bg-color) 0%,
-    rgba(16, 185, 129, 0.12) 35%,
-    rgba(245, 158, 11, 0.14) 100%);
+    rgba(123, 63, 242, 0.08) 35%,
+    rgba(123, 63, 242, 0.12) 100%);
 }
 
 .featured-content {
@@ -195,7 +195,7 @@ section {
 
 .highlight-name {
     color: var(--highlight-color);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    text-shadow: 2px 2px 4px rgba(123, 63, 242, 0.15);
 }
 
 .typing-text {
@@ -249,28 +249,28 @@ section {
 .btn-primary {
     background-color: var(--white);
     color: var(--highlight-color);
-    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.18);
+    box-shadow: 0 4px 15px rgba(123, 63, 242, 0.18);
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
     background-color: var(--highlight-color);
     color: var(--white);
-    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.32);
+    box-shadow: 0 6px 20px rgba(123, 63, 242, 0.32);
 }
 
 .btn-secondary {
     background-color: var(--white);
     color: var(--highlight-color);
     border: 2px solid var(--highlight-color);
-    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.18);
+    box-shadow: 0 4px 15px rgba(123, 63, 242, 0.18);
 }
 
 .btn-secondary:hover {
     transform: translateY(-3px);
     background-color: var(--highlight-color);
     color: var(--white);
-    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.32);
+    box-shadow: 0 6px 20px rgba(123, 63, 242, 0.32);
 }
 
 /* Pulse Animation for CTA */
@@ -444,7 +444,7 @@ section {
 
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 15px 40px rgba(123, 63, 242, 0.25);
 }
 
 
@@ -456,7 +456,7 @@ section {
     align-items: center;
     justify-content: center;
     padding: 10px;
-    background-color: #f7f8fb;
+    background-color: #ffffff;
 }
 
 .project-image img {
@@ -478,7 +478,7 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(23, 185, 130, 0.82);
+    background-color: rgba(123, 63, 242, 0.95);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -657,7 +657,7 @@ section {
 
 .achievement-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 25px rgba(16, 185, 129, 0.15);
+    box-shadow: 0 8px 25px rgba(123, 63, 242, 0.15);
 }
 
 .achievement-image {
@@ -694,27 +694,27 @@ section {
 
 /* Individual achievement icon colors matching theme */
 .achievement-card:nth-child(1) .achievement-icon {
-    background: linear-gradient(135deg, #10b981, #34d399);
+    background: linear-gradient(135deg, #7B3FF2, #9D5FFF);
 }
 
 .achievement-card:nth-child(2) .achievement-icon {
-    background: linear-gradient(135deg, #10b981, #34d399);
+    background: linear-gradient(135deg, #7B3FF2, #9D5FFF);
 }
 
 .achievement-card:nth-child(3) .achievement-icon {
-    background: linear-gradient(135deg, #10b981, #34d399);
+    background: linear-gradient(135deg, #7B3FF2, #9D5FFF);
 }
 
 .achievement-card:nth-child(4) .achievement-icon {
-    background: linear-gradient(135deg, #10b981, #34d399);
+    background: linear-gradient(135deg, #7B3FF2, #9D5FFF);
 }
 
 .achievement-card:nth-child(5) .achievement-icon {
-    background: linear-gradient(135deg, #10b981, #34d399);
+    background: linear-gradient(135deg, #7B3FF2, #9D5FFF);
 }
 
 .achievement-card:nth-child(6) .achievement-icon {
-    background: linear-gradient(135deg, #10b981, #34d399);
+    background: linear-gradient(135deg, #7B3FF2, #9D5FFF);
 }
 
 .achievement-card:hover .achievement-icon {
@@ -802,7 +802,7 @@ section {
 .form-group input,
 .form-group textarea {
     padding: 12px 15px;
-    border: 2px solid #d1d5db !important;
+    border: 2px solid rgba(123, 63, 242, 0.3) !important;
     border-radius: 8px;
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
@@ -814,13 +814,13 @@ section {
 
 .form-group input:hover,
 .form-group textarea:hover {
-    border-color: #c7cdd6 !important;
+    border-color: rgba(123, 63, 242, 0.6) !important;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none !important;
-    border-color: #9ca3af !important;
+    border-color: rgba(123, 63, 242, 0.6) !important;
     box-shadow: none !important;
     background-color: var(--white);
 }
@@ -863,7 +863,7 @@ section {
 
 .contact-icon i {
     font-size: 20px;
-    color: var(--header-color);
+    color: var(--white);
 }
 
 .contact-details h4 {
@@ -896,7 +896,7 @@ section {
 .social-icon {
     width: 45px;
     height: 45px;
-    background-color: var(--header-color);
+    background-color: var(--highlight-color);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -908,8 +908,8 @@ section {
 }
 
 .social-icon:hover {
-    background-color: var(--highlight-color);
-    color: var(--header-color);
+    background-color: var(--white);
+    color: var(--highlight-color);
     transform: translateY(-5px) rotate(360deg);
 }
 
@@ -946,7 +946,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--header-color);
+    color: var(--white);
     font-size: 18px;
     transition: var(--transition);
     text-decoration: none;
@@ -954,6 +954,7 @@ section {
 
 .footer-icon:hover {
     background-color: var(--white);
+    color: var(--highlight-color);
     transform: translateY(-5px);
 }
 
