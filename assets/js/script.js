@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const typedTextSpan = document.querySelector('.typed-text');
     const textArray = [
-        'Web Developer',
+        'AI Assisted Developer',
         'Frontend Engineer',
         'UI/UX Designer',
         'Problem Solver',
