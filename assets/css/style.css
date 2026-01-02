@@ -66,6 +66,25 @@ section {
 }
 
 /* ===================================
+   Glass UI Style
+   =================================== */
+
+.glass-ui {
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+}
+
+.glass-ui:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(123, 63, 242, 0.15);
+}
+
+/* ===================================
    Navigation Bar
    =================================== */
 
@@ -232,58 +251,106 @@ section {
 }
 
 .btn {
-    padding: 12px 30px;
+    padding: 14px 32px;
     border: none;
     border-radius: 50px;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
     text-decoration: none;
-    display: inline-block;
-    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
     color: var(--highlight-color);
     background-color: var(--white);
     border: 2px solid var(--highlight-color);
+    letter-spacing: 0.5px;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: var(--highlight-color);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+    z-index: 0;
+}
+
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn span,
+.btn i {
+    position: relative;
+    z-index: 1;
 }
 
 .btn-primary {
-    background-color: var(--white);
-    color: var(--highlight-color);
-    box-shadow: 0 4px 15px rgba(123, 63, 242, 0.18);
+    background: linear-gradient(135deg, var(--highlight-color), #9D5FFF);
+    color: var(--white);
+    border: none;
+    box-shadow: 0 8px 24px rgba(123, 63, 242, 0.25), 0 4px 8px rgba(123, 63, 242, 0.15);
+}
+
+.btn-primary::before {
+    background: linear-gradient(135deg, #9D5FFF, var(--highlight-color));
 }
 
 .btn-primary:hover {
-    transform: translateY(-3px);
-    background-color: var(--highlight-color);
-    color: var(--white);
-    box-shadow: 0 6px 20px rgba(123, 63, 242, 0.32);
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 32px rgba(123, 63, 242, 0.35), 0 8px 16px rgba(123, 63, 242, 0.2);
+}
+
+.btn-primary:active {
+    transform: translateY(-2px) scale(0.98);
 }
 
 .btn-secondary {
-    background-color: var(--white);
+    background: rgba(255, 255, 255, 0.95);
     color: var(--highlight-color);
     border: 2px solid var(--highlight-color);
-    box-shadow: 0 4px 15px rgba(123, 63, 242, 0.18);
+    box-shadow: 0 4px 16px rgba(123, 63, 242, 0.15);
+    backdrop-filter: blur(8px);
+}
+
+.btn-secondary::before {
+    background: var(--highlight-color);
 }
 
 .btn-secondary:hover {
-    transform: translateY(-3px);
-    background-color: var(--highlight-color);
+    transform: translateY(-4px) scale(1.02);
     color: var(--white);
-    box-shadow: 0 6px 20px rgba(123, 63, 242, 0.32);
+    box-shadow: 0 8px 24px rgba(123, 63, 242, 0.25), 0 4px 12px rgba(123, 63, 242, 0.15);
+}
+
+.btn-secondary:active {
+    transform: translateY(-2px) scale(0.98);
 }
 
 /* Pulse Animation for CTA */
 .pulse-btn {
-    animation: pulse 2s infinite;
+    animation: pulse 2.5s ease-in-out infinite;
 }
 
 @keyframes pulse {
     0%, 100% {
         transform: scale(1);
+        box-shadow: 0 8px 24px rgba(123, 63, 242, 0.25), 0 4px 8px rgba(123, 63, 242, 0.15);
     }
     50% {
         transform: scale(1.05);
+        box-shadow: 0 12px 32px rgba(123, 63, 242, 0.35), 0 8px 16px rgba(123, 63, 242, 0.25);
     }
 }
 
@@ -653,6 +720,8 @@ section {
     transition: var(--transition);
     box-shadow: 0 2px 10px var(--shadow);
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .achievement-card:hover {
@@ -665,6 +734,45 @@ section {
     height: 200px;
     overflow: hidden;
     position: relative;
+}
+
+.achievement-verify {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 20px;
+    margin: 0 auto 20px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--highlight-color);
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(123, 63, 242, 0.2);
+    transition: all 0.3s ease;
+    border: 2px solid var(--highlight-color);
+}
+
+.achievement-verify i {
+    font-size: 16px;
+    color: var(--highlight-color);
+}
+
+.achievement-verify:hover {
+    background: var(--highlight-color);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(123, 63, 242, 0.35);
+}
+
+.achievement-verify:hover i {
+    color: var(--white);
+}
+
+.achievement-verify:focus-visible {
+    outline: 3px solid rgba(123, 63, 242, 0.35);
+    outline-offset: 2px;
 }
 
 .achievement-image img {
@@ -737,7 +845,8 @@ section {
 .achievement-card p {
     color: var(--light-text);
     font-size: 14px;
-    padding: 0 20px 30px;
+    padding: 0 20px 20px;
+    flex: 1;
 }
 
 .hidden-achievement {
