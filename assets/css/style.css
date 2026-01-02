@@ -191,7 +191,8 @@ section {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding-top: 80px;
+    padding-top: 100px;
+    padding-bottom: 60px;
     background: linear-gradient(135deg,
         var(--bg-color) 0%,
     rgba(123, 63, 242, 0.08) 35%,
@@ -1030,6 +1031,9 @@ section {
     background-color: var(--white);
     padding: 50px 0 30px;
     border-top: 1px solid rgba(123, 63, 242, 0.1);
+    margin-top: 30px;
+    position: relative;
+    z-index: 10;
 }
 
 .footer-content {
@@ -1223,10 +1227,26 @@ section {
         padding: 40px 20px;
         transition: var(--transition);
         box-shadow: 0 5px 20px var(--shadow);
+        overflow-y: auto;
     }
     
     .nav-links.active {
         left: 0;
+    }
+    
+    .featured-section {
+        min-height: auto;
+        padding-top: 100px;
+        padding-bottom: 80px;
+    }
+    
+    .featured-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .featured-image {
+        order: -1;
     }
     
     .featured-text h1 {
@@ -1235,6 +1255,7 @@ section {
     
     .typing-text {
         font-size: 24px;
+        min-height: 45px;
     }
     
     .cta-buttons {
@@ -1278,14 +1299,29 @@ section {
         padding: 20px;
     }
     
+    .footer {
+        padding: 40px 0 25px;
+        margin-top: 40px;
+    }
+    
     .footer-content {
         flex-direction: column;
         gap: 20px;
         text-align: center;
     }
     
+    .footer-social {
+        gap: 15px;
+    }
+    
+    .footer-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+    
     .back-to-top {
-        bottom: 20px;
+        bottom: 100px;
         right: 20px;
         width: 45px;
         height: 45px;
@@ -1293,24 +1329,40 @@ section {
 }
 
 @media (max-width: 480px) {
+    .featured-section {
+        padding-top: 90px;
+        padding-bottom: 70px;
+    }
+    
     .featured-text h1 {
-        font-size: 28px;
+        font-size: 26px;
     }
     
     .typing-text {
-        font-size: 20px;
+        font-size: 18px;
+        min-height: 40px;
     }
     
     .featured-description {
-        font-size: 16px;
+        font-size: 14px;
+    }
+    
+    .featured-content {
+        gap: 30px;
+    }
+    
+    .image-wrapper {
+        max-width: 280px;
     }
     
     .cta-buttons .btn {
         max-width: 100%;
+        padding: 12px 24px;
+        font-size: 14px;
     }
     
     .section-title {
-        font-size: 26px;
+        font-size: 24px;
     }
     
     .skills-grid {
@@ -1319,5 +1371,26 @@ section {
     
     .contact-content {
         gap: 30px;
+    }
+    
+    .footer {
+        padding: 35px 0 20px;
+        margin-top: 30px;
+    }
+    
+    .footer-text {
+        font-size: 13px;
+    }
+    
+    .footer-copyright {
+        font-size: 11px;
+    }
+    
+    .back-to-top {
+        bottom: 90px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
     }
 }
