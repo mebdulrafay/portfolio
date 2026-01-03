@@ -1255,7 +1255,7 @@ section {
     
     .featured-section {
         min-height: auto;
-        padding-top: 100px;
+        padding-top: 130px;
         padding-bottom: 80px;
     }
     
@@ -1349,7 +1349,7 @@ section {
 
 @media (max-width: 480px) {
     .featured-section {
-        padding-top: 90px;
+        padding-top: 120px;
         padding-bottom: 70px;
     }
     
