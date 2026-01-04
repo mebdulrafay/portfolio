@@ -252,6 +252,7 @@ section {
 .cta-buttons {
     display: flex;
     gap: 20px;
+    isolation: isolate;
 }
 
 .btn {
@@ -266,37 +267,12 @@ section {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.3s ease;
     position: relative;
-    overflow: hidden;
     color: var(--highlight-color);
     background-color: var(--white);
     border: 2px solid var(--highlight-color);
     letter-spacing: 0.5px;
-}
-
-.btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 50px;
-    background: transparent;
-    transform: none;
-    transition: background 0.3s ease;
-    z-index: 0;
-}
-
-.btn:hover::before {
-    background: transparent;
-}
-
-.btn span,
-.btn i {
-    position: relative;
-    z-index: 1;
 }
 
 .btn-primary {
@@ -306,39 +282,29 @@ section {
     box-shadow: 0 8px 24px rgba(123, 63, 242, 0.25), 0 4px 8px rgba(123, 63, 242, 0.15);
 }
 
-.btn-primary::before {
-    background: linear-gradient(135deg, #9D5FFF, var(--highlight-color));
-}
-
 .btn-primary:hover {
-    transform: translateY(-4px) scale(1.02);
+    transform: translateY(-3px);
     box-shadow: 0 12px 32px rgba(123, 63, 242, 0.35), 0 8px 16px rgba(123, 63, 242, 0.2);
 }
 
 .btn-primary:active {
-    transform: translateY(-2px) scale(0.98);
+    transform: translateY(-1px);
 }
 
 .btn-secondary {
-    background: rgba(255, 255, 255, 0.95);
-    color: var(--highlight-color);
-    border: 2px solid var(--highlight-color);
-    box-shadow: 0 4px 16px rgba(123, 63, 242, 0.15);
-    backdrop-filter: blur(8px);
-}
-
-.btn-secondary::before {
-    background: var(--highlight-color);
+    background: linear-gradient(135deg, var(--highlight-color), #9D5FFF);
+    color: var(--white);
+    border: none;
+    box-shadow: 0 8px 24px rgba(123, 63, 242, 0.25), 0 4px 8px rgba(123, 63, 242, 0.15);
 }
 
 .btn-secondary:hover {
-    transform: translateY(-4px) scale(1.02);
-    color: var(--white);
-    box-shadow: 0 8px 24px rgba(123, 63, 242, 0.25), 0 4px 12px rgba(123, 63, 242, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(123, 63, 242, 0.35), 0 8px 16px rgba(123, 63, 242, 0.2);
 }
 
 .btn-secondary:active {
-    transform: translateY(-2px) scale(0.98);
+    transform: translateY(-1px);
 }
 
 /* Pulse Animation for CTA */
@@ -346,14 +312,16 @@ section {
     animation: pulse 2.5s ease-in-out infinite;
 }
 
+.pulse-btn:hover {
+    animation: none;
+}
+
 @keyframes pulse {
     0%, 100% {
-        transform: scale(1);
         box-shadow: 0 8px 24px rgba(123, 63, 242, 0.25), 0 4px 8px rgba(123, 63, 242, 0.15);
     }
     50% {
-        transform: scale(1.05);
-        box-shadow: 0 12px 32px rgba(123, 63, 242, 0.35), 0 8px 16px rgba(123, 63, 242, 0.25);
+        box-shadow: 0 10px 28px rgba(123, 63, 242, 0.35), 0 6px 14px rgba(123, 63, 242, 0.25);
     }
 }
 
@@ -948,6 +916,8 @@ section {
 
 .contact-form button {
     align-self: flex-start;
+    isolation: isolate;
+    z-index: 1;
 }
 
 .contact-info {
@@ -1211,16 +1181,24 @@ section {
 
 /* Mobile */
 @media (max-width: 768px) {
+    .nav-wrapper {
+        padding: 12px 0;
+    }
+    
+    .logo a {
+        font-size: 20px;
+    }
+    
     .hamburger {
         display: flex;
     }
     
     .nav-links {
         position: fixed;
-        top: 70px;
+        top: 55px;
         left: -100%;
         width: 100%;
-        height: calc(100vh - 70px);
+        height: calc(100vh - 55px);
         background-color: var(--white);
         flex-direction: column;
         align-items: center;
@@ -1255,7 +1233,7 @@ section {
     
     .featured-section {
         min-height: auto;
-        padding-top: 130px;
+        padding-top: 90px;
         padding-bottom: 80px;
     }
     
@@ -1280,11 +1258,17 @@ section {
     .cta-buttons {
         flex-direction: column;
         align-items: center;
+        gap: 15px;
     }
 
     .cta-buttons .btn {
         width: 100%;
         max-width: 320px;
+        margin: 0;
+    }
+    
+    .cta-buttons .btn:hover {
+        transform: translateY(-2px);
     }
     
     .section-title {
@@ -1349,7 +1333,7 @@ section {
 
 @media (max-width: 480px) {
     .featured-section {
-        padding-top: 120px;
+        padding-top: 80px;
         padding-bottom: 70px;
     }
     
