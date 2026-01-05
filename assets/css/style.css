@@ -1220,21 +1220,24 @@ section {
         padding: 10px 20px;
     }
     
-    /* Re-enable underline animation on mobile */
     .nav-link::after {
+        content: '';
+        position: absolute;
         display: block;
         bottom: -6px;
+        left: 50%;
         height: 3px;
         width: 0;
+        background-color: var(--highlight-color);
+        transition: var(--transition);
+        transform: translateX(-50%);
     }
-    
+
     .nav-link:hover,
     .nav-link.active {
         color: var(--highlight-color);
-        background-color: rgba(123, 63, 242, 0.1);
-        border-radius: 8px;
     }
-    
+
     .nav-link:hover::after,
     .nav-link.active::after {
         width: 70%;
