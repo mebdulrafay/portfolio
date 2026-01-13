@@ -1409,3 +1409,54 @@ section {
         font-size: 18px;
     }
 }
+/* ===================================
+   Achievements — responsive image fix
+   Add this near the end of style.css (it overrides earlier .achievement-image rules)
+   =================================== */
+
+.achievement-image {
+    width: 100%;
+    /* Use aspect-ratio rather than fixed px height so the container scales responsively */
+    aspect-ratio: 16 / 9;
+    max-height: 320px; /* prevents the image from becoming too tall on large screens */
+    height: auto;
+    overflow: hidden; /* prevent overflow */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,0.02); /* subtle fallback background */
+    border-radius: 8px 8px 0 0; /* match card rounding if needed */
+}
+
+/* Ensure the image fills the container while preserving aspect ratio */
+.achievement-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;       /* fill the box without stretching (cropping if necessary) */
+    object-position: center; /* keep the focal point centered */
+    transition: var(--transition);
+    -o-object-fit: cover;    /* older Opera */
+    -o-object-position: center;
+}
+
+/* Keep the existing hover scale/crop behaviour but smoother */
+.achievement-card:hover .achievement-image img {
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .achievement-image {
+        aspect-ratio: 4 / 3;
+        max-height: 260px;
+    }
+}
+
+@media (max-width: 600px) {
+    .achievement-image {
+        aspect-ratio: 1 / 1; /* more square on very small screens */
+        max-height: 220px;
+    }
+}
