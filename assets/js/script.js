@@ -131,14 +131,17 @@ document.addEventListener('DOMContentLoaded', function() {
             const elementTop = element.getBoundingClientRect().top;
             const elementVisible = 150;
             
-            if (elementTop < windowHeight - elementVisible) {
+            // Immediately show home section elements
+            const isInHomeSection = element.closest('#home');
+            
+            if (isInHomeSection || elementTop < windowHeight - elementVisible) {
                 element.classList.add('active');
             }
         });
     }
     
-    // Initial check on page load
-    revealOnScroll();
+    // Initial check on page load with a slight delay for smooth fade in
+    setTimeout(revealOnScroll, 100);
     
     // Check on scroll
     window.addEventListener('scroll', revealOnScroll);
@@ -352,19 +355,52 @@ document.addEventListener('DOMContentLoaded', function() {
     // ===================================
     
     const footerText = document.querySelector('.footer-text p');
-    const currentYear = new Date().getFullYear();
-    footerText.textContent = `© ${currentYear} Hafiz Abdul Rafay. All rights reserved.`;
+    if (footerText) {
+        const currentYear = new Date().getFullYear();
+        footerText.textContent = `© ${currentYear} Hafiz Abdul Rafay. All rights reserved.`;
+    }
     
     // ===================================
-    // Loading Animation
+    // Loading Animation - Image Loader with Proper Cleanup
     // ===================================
     
+    // Function to hide loader
+    function hideLoaderNow() {
+        console.log("🔄 Attempting to hide loader...");
+        
+        const loader = document.getElementById('loader-overlay');
+        
+        if (loader) {
+            console.log("✅ Loader element found!");
+            
+            // Force visibility and display properties
+            loader.style.opacity = '0';
+            loader.style.pointerEvents = 'none';
+            loader.style.visibility = 'hidden';
+            loader.style.display = 'none';
+            
+            // Also add class
+            loader.classList.add('hidden');
+            
+            console.log("✅ Loader hidden with styles");
+        } else {
+            console.error("❌ Loader element NOT found!");
+        }
+        
+        // Re-enable body scroll
+        document.body.style.overflow = 'auto';
+        document.body.style.overflowY = 'auto';
+        document.body.classList.add('page-loaded');
+        console.log("✅ Body scroll enabled");
+    }
+    
+    // Hide after 5 seconds from DOMContentLoaded
+    setTimeout(hideLoaderNow, 5000);
+    
+    // Also on window load
     window.addEventListener('load', function() {
-        document.body.style.opacity = '0';
-        setTimeout(() => {
-            document.body.style.transition = 'opacity 0.5s ease';
-            document.body.style.opacity = '1';
-        }, 100);
+        console.log("⏱️ Window load event fired");
+        hideLoaderNow();
     });
     
     // ===================================
