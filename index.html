@@ -589,7 +589,7 @@
 </html>
 <!-- 🔥 Chat Button with Custom Logo -->
 <div id="chat-toggle">
-  <img src="agent.png" id="chat-logo" />
+  <img src="agent.png.png" id="chat-logo" />
 </div>
 
 <!-- 💬 Chat Box -->
@@ -708,7 +708,7 @@ input.addEventListener("keypress", async (e) => {
     input.value = "";
 
     try {
-      const res = await fetch("https://YOUR-N8N-WEBHOOK-URL", {
+      const res = await fetch("https://abdulrafayawanofficial.app.n8n.cloud/webhook/10410032-979e-4d49-be37-b74b27d50d77/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: msg })
