@@ -1518,43 +1518,4 @@ section {
     }
 }
 :root {
-	/* Colors - Updated for Purple & White Theme */
-	--chat--color--primary: #6b21ff; /* Purple (Aapka main brand color) */
-	--chat--color--primary-shade-50: #5a1ce6;
-	--chat--color--primary--shade-100: #4a17cc;
 	
-	--chat--color--secondary: #6b21ff; /* User message bubble purple hi rakha hai */
-	--chat--color-secondary-shade-50: #5a1ce6;
-	
-	--chat--color-white: #ffffff; /* Shudh Safaid */
-	--chat--color-light: #f9f9f9; /* Background ke liye bohot halka gray */
-	--chat--color-light-shade-50: #f0f0f0;
-	--chat--color-light-shade-100: #e0e0e0;
-	
-	--chat--color-medium: #d2d4d9;
-	--chat--color-dark: #1a1a1b; /* Header aur text ke liye dark blackish tone */
-	--chat--color-disabled: #d2d4d9;
-	--chat--color-typing: #6b21ff;
-
-	/* Header Styles */
-	--chat--header--background: #6b21ff; /* Header ab Purple hoga */
-	--chat--header--color: #ffffff;      /* Header text White hoga */
-
-	/* Message Styles */
-	--chat--message--bot--background: #ffffff; /* AI ka message Safaid */
-	--chat--message--bot--color: #1a1a1b;
-	--chat--message--user--background: #6b21ff; /* User ka message Purple */
-	--chat--message--user--color: #ffffff;      /* User message text White */
-
-	/* Toggle Button (Chat Icon) */
-	--chat--toggle--background: #6b21ff; /* Gole button Purple hoga */
-	--chat--toggle--color: #ffffff;      /* Button icon White hoga */
-
-	/* Base Layout & Dimensions */
-	--chat--spacing: 1rem;
-	--chat--border-radius: 0.75rem; /* Thore rounded corners zyada premium lagte hain */
-	--chat--font-family: 'Poppins', -apple-system, sans-serif;
-	--chat--window--width: 380px;
-	--chat--window--height: 550px;
-	--chat--window--z-index: 9999;
-}
