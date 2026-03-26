@@ -26,7 +26,16 @@
     /* Transitions */
     --transition: all 0.3s ease;
 }
-
+/* n8n Chat Widget Custom Colors */
+:root {
+    --chat--color--primary: #6b21ff; 
+    --chat--color--secondary: #6b21ff;
+    --chat--header--background: #6b21ff;
+    --chat--header--color: #ffffff;
+    --chat--toggle--background: #6b21ff;
+    --chat--message--user--background: #6b21ff;
+    --chat--message--user--color: #ffffff;
+}
 :root[data-theme="dark"] {
     --bg-color: #000000;
     --highlight-color: #7B3FF2;
