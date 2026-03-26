@@ -584,16 +584,119 @@
     <script src="assets/js/script.js"></script>
     
 </body>
+<script type="module" defer>
+  import Chatbot from "https://cdn.n8nchatui.com/v1/embed.js";
+  Chatbot.init({
+    "n8nChatUrl": "https://abdulrafayawanofficial.app.n8n.cloud/webhook/10410032-979e-4d49-be37-b74b27d50d77/chat",
+    "metadata": {}, // Include any custom data to send with each message to your n8n workflow
+    "theme": {
+      "button": {
+        "backgroundColor": "#ffffff",
+        "right": 20,
+        "bottom": 20,
+        "size": 50,
+        "iconColor": "#4c00a8",
+        "customIconSrc": "https://raw.githubusercontent.com/mebdulrafay/portfolio/refs/heads/main/assets/img/agent.png.png",
+        "customIconSize": 84,
+        "customIconBorderRadius": 0,
+        "autoWindowOpen": {
+          "autoOpen": false,
+          "openDelay": 2
+        },
+        "borderRadius": "circle",
+        "draggable": true
+      },
+      "tooltip": {
+        "showTooltip": true,
+        "tooltipMessage": "Hello 👋 ",
+        "tooltipBackgroundColor": "#ffffff",
+        "tooltipTextColor": "#000000",
+        "tooltipFontSize": 15,
+        "hideTooltipOnMobile": true
+      },
+      "allowProgrammaticMessage": false,
+      "chatWindow": {
+        "borderRadiusStyle": "rounded",
+        "avatarBorderRadius": 14,
+        "messageBorderRadius": 6,
+        "showTitle": true,
+        "title": "ROEX | AI Assistant",
+        "titleAvatarSrc": "https://raw.githubusercontent.com/mebdulrafay/portfolio/refs/heads/main/assets/img/agent.png.png",
+        "avatarSize": 33,
+        "welcomeMessage": " welcome ",
+        "errorMessage": "Please connect me to n8n first",
+        "backgroundColor": "#ffffff",
+        "height": 600,
+        "width": 400,
+        "fontSize": 16,
+        "starterPrompts": [
+          "Who are you?",
+          "What do you do?"
+        ],
+        "starterPromptFontSize": 15,
+        "renderHTML": false,
+        "clearChatOnReload": false,
+        "showScrollbar": false,
+        "botMessage": {
+          "backgroundColor": "#5e17eb",
+          "textColor": "#ffffff",
+          "showAvatar": true,
+          "avatarSrc": "https://raw.githubusercontent.com/mebdulrafay/portfolio/refs/heads/main/assets/img/agent.png.png",
+          "showCopyToClipboardIcon": true
+        },
+        "userMessage": {
+          "backgroundColor": "#fff6f3",
+          "textColor": "#050505",
+          "showAvatar": true,
+          "avatarSrc": "https://www.svgrepo.com/show/532363/user-alt-1.svg"
+        },
+        "textInput": {
+          "placeholder": "Ask me about HAR",
+          "backgroundColor": "#ffffff",
+          "textColor": "#1e1e1f",
+          "sendButtonColor": "#5e17eb",
+          "maxChars": 50,
+          "maxCharsWarningMessage": "You exceeded the characters limit. Please input less than 50 characters.",
+          "autoFocus": false,
+          "borderRadius": 5,
+          "sendButtonBorderRadius": 50
+        },
+        "uploadsConfig": {
+          "enabled": true,
+          "acceptFileTypes": [
+            "png",
+            "jpeg",
+            "jpg",
+            "pdf",
+            "md",
+            "xml",
+            "xls",
+            "bmp",
+            "webp",
+            "xlsx",
+            "json",
+            "doc",
+            "txt",
+            "svg",
+            "gif",
+            "csv",
+            "docx",
+            "rtf"
+          ],
+          "maxSizeInMB": 5,
+          "maxFiles": 1
+        },
+        "voiceInputConfig": {
+          "enabled": true,
+          "maxRecordingTime": 10,
+          "recordingNotSupportedMessage": "To record audio, use modern browsers like Chrome or Firefox that support audio recording",
+          "microphoneAccessErrorMessage": "Microphone access is required to record audio. Please allow microphone access in your browser settings"
+        }
+      }
+    }
+    });
+  </script>
 
-</html>
-<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
-<script type="module">
-	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
-
-	createChat({
-		webhookUrl: 'https://abdulrafayawanofficial.app.n8n.cloud/webhook/10410032-979e-4d49-be37-b74b27d50d77/chat'
-	});
-</script>
     
     
 
