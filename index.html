@@ -574,47 +574,28 @@
             </div>
         </div>
     </footer>
+<!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
+    <!-- Main JavaScript -->
+    <!-- Load main interactions -->
+    <script src="assets/js/script.js"></script>
     
-    
-<script src="assets/js/script.js"></script>
-
-    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
-    
-    <script type="module">
-        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
-
-        // 1. Pehle Chat Initialize karein
-        createChat({
-            webhookUrl: 'https://abdulrafayawanofficial.app.n8n.cloud/webhook/10410032-979e-4d49-be37-b74b27d50d77/chat',
-            title: 'Hafiz Abdul Rafay AI',
-            welcomeMessage: 'Assalam-o-Alaikum! How can I help you today?',
-            backgroundColor: '#8a2be2', // Purple theme
-        });
-
-        // 2. FORCE HIDE LOADER (Ye line aapka masla hal karegi)
-        // Ye script check karega ke agar 1.5 seconds tak loader nahi hata, to ye khud hata dega
-        setTimeout(() => {
-            const preloader = document.querySelector('.preloader') || 
-                              document.querySelector('#preloader') || 
-                              document.querySelector('.loader-wrapper');
-            if (preloader) {
-                preloader.style.opacity = '0';
-                setTimeout(() => {
-                    preloader.style.display = 'none';
-                }, 500);
-            }
-        }, 1500); 
-    </script>
 </body>
 
 </html>
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<script type="module">
+	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
 
- 
-
-
-
-
+	createChat({
+		webhookUrl: 'https://abdulrafayawanofficial.app.n8n.cloud/webhook/10410032-979e-4d49-be37-b74b27d50d77/chat'
+	});
+</script>
+    
+    
 
 
 
