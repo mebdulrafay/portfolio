@@ -575,154 +575,24 @@
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button id="backToTop" class="back-to-top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
+    
     <!-- Main JavaScript -->
     <!-- Load main interactions -->
     <script src="assets/js/script.js"></script>
-    
+<!!--chat bot-->   
+  <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<script type="module">
+	import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+	createChat({
+		webhookUrl: 'https://abdulrafayawanofficial.app.n8n.cloud/webhook/10410032-979e-4d49-be37-b74b27d50d77/chat'
+	});
+</script>  
 </body>
 
 </html>
-<!-- 🔥 Chat Button with Custom Logo -->
-<div id="chat-toggle">
-  <img src="agent.png.png" id="chat-logo" />
-</div>
 
-<!-- 💬 Chat Box -->
-<div id="chat-container">
-  <div id="chat-header">
-    AI Assistant
-    <span id="chat-close">&times;</span>
-  </div>
-  <div id="chat-messages"></div>
-  <input id="chat-input" placeholder="Type a message..." />
-</div>
-
-<style>
-/* Chat Button */
-#chat-toggle {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #6a4fff; /* Tumhara purple shade */
-  padding: 12px;
-  border-radius: 50%;
-  cursor: pointer;
-  width: 60px;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
-
-/* Logo in button */
-#chat-logo {
-  width: 35px;
-  height: 35px;
-  object-fit: contain;
-}
-
-/* Chat Container */
-#chat-container {
-  position: fixed;
-  bottom: 90px;
-  right: 20px;
-  width: 320px;
-  height: 420px;
-  background: white;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  display: none;
-  flex-direction: column;
-  font-family: Arial, sans-serif;
-  z-index: 9999;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-}
-
-/* Chat Header */
-#chat-header {
-  background: #6a4fff; /* Tumhara purple shade */
-  color: white;
-  padding: 10px;
-  font-weight: bold;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-  font-size: 16px;
-}
-
-/* Close Icon */
-#chat-close {
-  cursor: pointer;
-  font-size: 18px;
-}
-
-/* Messages */
-#chat-messages {
-  flex: 1;
-  padding: 10px;
-  overflow-y: auto;
-}
-
-/* Input */
-#chat-input {
-  border: none;
-  border-top: 1px solid #ccc;
-  padding: 10px;
-  width: 100%;
-  box-sizing: border-box;
-}
-</style>
-
-<script>
-const toggle = document.getElementById("chat-toggle");
-const container = document.getElementById("chat-container");
-const closeBtn = document.getElementById("chat-close");
-const input = document.getElementById("chat-input");
-const messages = document.getElementById("chat-messages");
-
-// Open chat
-toggle.onclick = () => {
-  container.style.display =
-    container.style.display === "flex" ? "none" : "flex";
-};
-
-// Close chat
-closeBtn.onclick = () => {
-  container.style.display = "none";
-};
-
-// Send message
-input.addEventListener("keypress", async (e) => {
-  if (e.key === "Enter") {
-    const msg = input.value;
-    messages.innerHTML += `<div><b>You:</b> ${msg}</div>`;
-    input.value = "";
-
-    try {
-      const res = await fetch("https://abdulrafayawanofficial.app.n8n.cloud/webhook/10410032-979e-4d49-be37-b74b27d50d77/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: msg })
-      });
-
-      const data = await res.json();
-      messages.innerHTML += `<div><b>AI:</b> ${data.reply}</div>`;
-      messages.scrollTop = messages.scrollHeight; // auto scroll
-    } catch (err) {
-      messages.innerHTML += `<div style="color:red"><b>Error:</b> Unable to reach AI</div>`;
-    }
-  }
-});
-</script>
+ 
 
 
 
